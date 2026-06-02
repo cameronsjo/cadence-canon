@@ -1,0 +1,21 @@
+{
+  "name": "cadence-canon",
+  "description": "Multi-session coordination — session identity, peer disclosure, and lane warnings for concurrent Claude Code sessions in one repo",
+  "author": {
+    "name": "Cameron Sjo",
+    "url": "https://github.com/cameronsjo"
+  },
+  "repository": "https://github.com/cameronsjo/cadence-canon",
+  "license": "BSL-1.1",
+  "keywords": [
+    "cadence",
+    "canon",
+    "multi-session",
+    "coordination",
+    "concurrency",
+    "session-identity"
+  ],
+  "dependencies": [
+    "cadence"
+  ]
+}
