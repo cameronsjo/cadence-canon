@@ -20,6 +20,12 @@
             "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-cadence-hooks.sh\" session guard",
             "if": "Bash(*git checkout*|*git switch*|*git add*|*git commit*)",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-cadence-hooks.sh\" session warn-branch-drift",
+            "if": "Bash(*git commit*)",
+            "timeout": 5
           }
         ]
       },
