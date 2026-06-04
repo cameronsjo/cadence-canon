@@ -1,5 +1,5 @@
 ---
-name: cadence:coordinating-sessions
+name: coordinating-sessions
 description: Use when a session-start disclosure names a live peer session, when cadence-hooks session status shows another session in this repo, or when the user says parallel Claude sessions are running in this checkout
 license: BSL-1.1
 metadata:
