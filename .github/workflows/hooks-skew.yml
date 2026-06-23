@@ -1,0 +1,25 @@
+name: hooks-skew
+
+# Fail when this plugin's hooks.json references a cadence-hooks subcommand that
+# the latest RELEASED binary doesn't ship yet — prevention for the no-op
+# `brew upgrade` skew advisory (claude-configurations #223). The gate logic
+# lives in the reusable workflow in cadence-hooks.
+
+on:
+  pull_request:
+    paths:
+      - "hooks/**"
+      - ".github/workflows/hooks-skew.yml"
+  push:
+    branches: [main]
+    paths:
+      - "hooks/**"
+
+permissions:
+  contents: read
+
+jobs:
+  doctor:
+    # Pinned to the reusable gate's commit SHA (supply-chain; zizmor
+    # unpinned-uses). Bump when cadence-hooks' plugin-hooks-skew.yml changes.
+    uses: cameronsjo/cadence-hooks/.github/workflows/plugin-hooks-skew.yml@a7f35b044122fec5edce74f8207a08159c0ed664
